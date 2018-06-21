@@ -61,7 +61,7 @@ public class FileListClassCode {
 
 		FileListClassCode x = new FileListClassCode();
 		Scanner sc = new Scanner(System.in);
-		//String path ="E://Assignment 9";
+		
 		System.out.println("Enter a path.. like C:\\Users\\Sahil\\eclipse-workspace\\DynamicArray\\src\\dynamicarray");
 		String path = sc.nextLine();
 		ArrayList<String> al=new ArrayList<String>();
