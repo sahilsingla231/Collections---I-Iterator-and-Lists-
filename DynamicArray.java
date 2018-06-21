@@ -1,16 +1,17 @@
 package dynamicarray;
 import java.util.Scanner;
 
+/**
+*
+* @author Sahil
+*/
+
 //Dynamic array made with different cases****************************
 
 public class DynamicArray {
 
 public int size,s;
-	
-	
-	private int arr[] ;
-	
-	
+private int arr[] ;	
   public DynamicArray()
 	{
 		 
@@ -51,7 +52,7 @@ public int size,s;
 	void arrayRestructur()  //Restructure the array
 	{
 		// re-structuring of array
-		//you can take size*1.5 as per question
+		//you can take size*1.5 as per question of new array
 		
 		int [] news = new int[size] ;
 		
@@ -60,7 +61,7 @@ public int size,s;
 			news[i] = arr[i];
 		}
 		
-		size = size *2 ;
+		size = (int)(size * (1.5)) ; //you can take size*1.5 as per question of new array......
 		
 		arr = new int[size] ;
 		
@@ -87,16 +88,12 @@ public int size,s;
 	void getValue(int idx) {
 		
 		try {
-			
-			
-			
 			System.out.println("At index  " + idx + " value is  " + arr[idx]);
 			
 		}
 		catch(Exception e)
 		{
-			System.out.println("invalid imdex!!");
-			
+			System.out.println("invalid imdex!!");	
 		}
 	
 	}
@@ -147,7 +144,7 @@ public int size,s;
 			
 		}catch(Exception e)
 		{
-			System.out.println("Invalid index entered !!");
+			System.out.println("Exception is"+ e.getMessage()); //THIS WILL GIVE DEFAULT EXCEPTION :-)
 		}
 		
 	}
@@ -201,12 +198,12 @@ public int size,s;
 		int choice;
 		
 		// choice list
-		System.out.println("Enter 1  To add element ");
+		System.out.println("Enter 1  To add element in dynamic array ");
 		System.out.println("Enter 2  Display all value in array");
 		System.out.println("Enter 3  Get value at any index");
 		System.out.println("Enter 4  Set value at that index");
 		System.out.println("Enter 5  To Insert value at that index");
-		System.out.println("Enter 6  To Remove last ");
+		System.out.println("Enter 6  To Remove last element");
 		System.out.println("Enter 7  To remove  value at that index");
 		System.out.println("Enter -1 To exit");
 		
@@ -215,7 +212,7 @@ public int size,s;
 		DynamicArray a = new DynamicArray();
 		
 		
-		System.out.println("Enter the choice  : ");
+		System.out.println("Enter the choice you want to implement : ");
 			choice = sc.nextInt();
 		while(choice != -1)
 		{
@@ -223,8 +220,7 @@ public int size,s;
 			{
 			    case 1 : // add the value
 			    		{
-							System.out.println("Enter the value to ADD in array : ");
-							
+							System.out.println("Enter the value to Add in array : ");
 							int val ;
 							val = sc.nextInt();
 							
@@ -235,92 +231,63 @@ public int size,s;
 			    		
 			    case 2 : // display the value
 	    		{
-					
-					
 					a.display();
 					break;
 				}
 	    		
 			    case 3 : // get value at that index
 	    		{
-					
 	    			System.out.println("Enter the index and GET corresponding value ");
-					int idx;
-					
-					idx = sc.nextInt();
-					
+					int idx;				
+					idx = sc.nextInt();			
 					a.getValue(idx);
 					break;
 				}
 	    		
 			    case 4 : // set value at that index
 	    		{
-					
 	    			System.out.println("Enter the index where has to SET value");
-					int idx;
-					
+					int idx;			
 					idx = sc.nextInt();
-					
-
 					System.out.println("Enter the value");
 					int val ;
-					val = sc.nextInt();
-					
-					a.setValueAt(idx,val);
-					
+					val = sc.nextInt();	
+					a.setValueAt(idx,val);	
 					break;
 				}
 	    		
 			    case 5 : // insert value at that index
 	    		{
-					
 	    			System.out.println("Enter the index where has to INSERT value");
 					int idx;
 					idx = sc.nextInt();
-					
 					System.out.println("Enter the value");
 					int val ;
 					val = sc.nextInt();
-					
 					a.insertAtIndex(idx, val);
-					
 					break;
 				}
 	    		
 			    case 6 : // Remove value from last index
 	    		{
 					a.remove();
-					
 					break;
 				}
 	    		
 			    case 7 : // Remove value from that index
-	    		{
-					
+	    		{	
 	    			System.out.println("Enter the index that value removed");
 					int idx;
 					idx = sc.nextInt();
-					
-					
-					a.removeAtIndex(idx);
-					
+					a.removeAtIndex(idx);	
 					break;
 				}
 			}
-			
-			
-			System.out.println("Enter the choice  : ");
+			System.out.println("Enter the choice you want to implement again: ");
 			choice = sc.nextInt();
 			
 		}
-		
-		
 		sc.close();
 	}
-	
-	
-	
-	
-	
-	
+		
 }
