@@ -65,26 +65,19 @@ public class FileListing {
    }
    
    // Recursive function Lister
-   /*
-   Lister() will take a single argument as a File handler which will be the source path where we have
-   to work and list all the files's path (even those in directories and subdirectories)
-   */
+  
      static void  Lister(File input) throws IOException{
         
          File lists[]=input.listFiles();
   
-      //if input points to a directory then generate all the files and folders list into an array called lists[]   
+      
       if(input.isDirectory()){ 
-          
-           
-       // say the array is lists
-          
-               //for each file/folder stored in array lists[]
+      
                for(int i=0;i<lists.length;i++){
 
-                       //check if it's a File or Directory
-                       if(lists[i].isFile()){  // Also, a break condition for Recursion.
-                           //if it's a file write it's path to an ArrayList
+                      
+                       if(lists[i].isFile()){  
+                          
                            l.add(lists[i].getName());
                            size++;
                            l.add(lists[i].getAbsoluteFile());
@@ -94,25 +87,19 @@ public class FileListing {
 
                        }
                        else{
-                           // if it's not a file then initialise File handler "input" with it's path  
-                           //Recall the function Lister() by passing the updated File Handler
+                          
                            File temp=new File(lists[i].getPath());
-                           Lister(temp); //Recursive call
+                           Lister(temp); 
                        }
 
                    }
        }
       else{
-          //if input points to a file add it to list and terminate Lister ()
+         
            l.add(lists[0].getAbsoluteFile());
       }
         
-   }// end of function Lister()
-     
-   /*
-   Writer() will take a single argument as a File handler which will be the destination path where we have
-   to write the ArrayList 
-    */   
+   }
        static void Writer(BufferedWriter out) throws IOException{
         
                    for(int i=0;i<size;i++){
